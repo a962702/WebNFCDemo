@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
         integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.4/font/bootstrap-icons.min.css"
+        integrity="sha512-yU7+yXTc4VUanLSjkZq+buQN3afNA4j2ap/mxvdr440P5aW9np9vIr2JMZ2E5DuYeC9bAoH9CuCR7SJlXAa4pg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -33,8 +37,39 @@
     <div id="second_step" style="display: none">
         <p class="fs-2 text-center">宿舍門禁卡註冊系統</p>
         <p class="fs-4 text-center">請選擇驗證方式</p>
-        <div class="d-grid gap-2">
-            <button type="button" class="btn btn-primary" id="second2third">下一步</button>
+        <div class="card text-center mb-3" style="width: 100%;">
+            <div class="card-body">
+                <h5 class="card-title">使用Email進行驗證</h5>
+                <p class="card-text">將寄送驗證碼至您的信箱</p>
+                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#validModal">選擇此方式</a>
+            </div>
+        </div>
+        <div class="card text-center mb-3" style="width: 100%;">
+            <div class="card-body">
+                <h5 class="card-title">使用手機進行驗證</h5>
+                <p class="card-text">將寄送驗證碼至您的手機</p>
+                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#validModal">選擇此方式</a>
+            </div>
+        </div>
+        <div class="modal fade" id="validModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">請輸入驗證碼</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="validCode" class="form-label">請輸入您收到的驗證碼</label>
+                            <input type="text" class="form-control" id="validCode">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary" id="second2third" data-bs-dismiss="modal">確定</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div id="third_step" style="display: none">
@@ -47,6 +82,7 @@
     </div>
     <div id="final_step" style="display: none">
         <p class="fs-2 text-center">宿舍門禁卡註冊系統</p>
+        <i class="bi bi-check-circle" style="font-size: 95vw; color: green;"></i>
         <p class="fs-4 text-center">已送出您的門禁卡註冊申請，將於10分鐘內生效</p>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
